@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:lpr/pages/inputLasra.dart';
 import 'package:lpr/pages/login.dart';
 
 const MaterialColor lagosBlue = const MaterialColor(
@@ -29,6 +32,7 @@ void main() async {
       initialRoute: "/",
       routes: {
         '/': (context) => LoginScreen(),
+        '/inputLasra': (context) => InputLasra(),
       },
     ),
   );

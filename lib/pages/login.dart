@@ -12,7 +12,6 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           color: Colors.white,
           child: SingleChildScrollView(
@@ -39,8 +38,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 50.0,),
-                  child: Image.asset("assets/lagosLogo.jpeg", fit: BoxFit.contain, width: 200.0, height: 170.0,),
+                  padding: EdgeInsets.only(
+                    top: 50.0,
+                  ),
+                  child: Image.asset(
+                    "assets/lagosLogo.jpeg",
+                    fit: BoxFit.contain,
+                    width: 200.0,
+                    height: 170.0,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 58.0),
@@ -65,71 +71,79 @@ class _LoginScreenState extends State<LoginScreen> {
                     right: 0.0,
                   ),
                   child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.3648,
-                      color: Color(0xFF009ED6),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Padding(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height * 0.3648,
+                    color: Color(0xFF009ED6),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 34.0,
+                            right: 44.0,
+                            left: 44.0,
+                          ),
+                          child: Material(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(2.0),
+                            child: Padding(
                               padding: EdgeInsets.only(
-                                top: 34.0,
-                                right: 44.0,
-                                left: 44.0,
+                                top: 14.0,
+                                left: 10.0,
+                                right: 10.0,
+                                bottom: 14.0,
                               ),
-                              child: Material(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2.0),
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                    top: 14.0,
-                                    left: 10.0,
-                                    right: 10.0,
-                                    bottom: 14.0,
+                              child: Center(
+                                child: Text(
+                                  "Sign In with Google",
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xFF757575),
                                   ),
-                                  child: Center(
-                                      child: Text(
-                                    "Sign In with Google",
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 18.0,
+                            right: 18.0,
+                            left: 18.0,
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/inputLasra');
+                            },
+                            child: Material(
+                              color: Color(0xFF00688C),
+                              borderRadius: BorderRadius.circular(150.0),
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  top: 14.0,
+                                  left: 66.0,
+                                  right: 66.2,
+                                  bottom: 14.0,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "Sign In with email",
                                     style: TextStyle(
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.w700,
-                                      color: Color(0xFF757575),
-                                    ),
-                                  )),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                top: 18.0,
-                                right: 18.0,
-                                left: 18.0,
-                              ),
-                              child: Material(
-                                color: Color(0xFF00688C),
-                                borderRadius: BorderRadius.circular(150.0),
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                    top: 14.0,
-                                    left: 66.0,
-                                    right: 66.2,
-                                    bottom: 14.0,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      "Sign In with email",
-                                      style: TextStyle(
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                      ),
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ],),),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
