@@ -1,8 +1,11 @@
 
 
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:lpr/pages/inputLasra.dart';
 import 'package:lpr/pages/login.dart';
+import 'package:lpr/pages/selectPalliative.dart';
+import 'package:lpr/pages/welcomePage.dart';
 
 const MaterialColor lagosBlue = const MaterialColor(
   0xff00688C,
@@ -21,6 +24,10 @@ const MaterialColor lagosBlue = const MaterialColor(
 );
 
 void main() async {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: lagosBlue,
+    statusBarBrightness: Brightness.dark,
+  ));
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -33,6 +40,8 @@ void main() async {
       routes: {
         '/': (context) => LoginScreen(),
         '/inputLasra': (context) => InputLasra(),
+        '/inputLasra/welcome': (context) => WelcomePage(),
+        '/inputLasra/welcome/selectPalliative': (context) => SelectPalliative(),
       },
     ),
   );

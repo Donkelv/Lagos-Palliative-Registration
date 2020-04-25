@@ -113,13 +113,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             right: 18.0,
                             left: 18.0,
                           ),
-                          child: InkWell(
-                            onTap: () {
+                          child: Material(
+                            color: Color(0xFF00688C),
+                            borderRadius: BorderRadius.circular(150.0),
+                            child: InkWell(
+                              onTap: () {
                               Navigator.pushNamed(context, '/inputLasra');
                             },
-                            child: Material(
-                              color: Color(0xFF00688C),
-                              borderRadius: BorderRadius.circular(150.0),
+                            splashColor: Color(0xFF009ED6),
                               child: Padding(
                                 padding: EdgeInsets.only(
                                   top: 14.0,

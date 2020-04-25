@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 
 class InputLasra extends StatefulWidget {
   @override
@@ -31,14 +31,15 @@ class _InputLasraState extends State<InputLasra> {
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(left: 20.0, top: 20.0),
-                      child: InkWell(
-                        onTap: (){
+                      child: Material(
+                        elevation: 7.0,
+                        color: Color(0xFF00688C),
+                        borderRadius: BorderRadius.circular(25.0),
+                        child: InkWell(
+                          onTap: (){
                           Navigator.pop(context);
-                        },
-                        child: Material(
-                          elevation: 7.0,
-                          color: Color(0xFF00688C),
-                          borderRadius: BorderRadius.circular(25.0),
+                           },
+                           splashColor: Color(0xFF009ED6),
                           child: Container(
                             height: 50.0,
                             width: 50.0,
@@ -99,7 +100,7 @@ class _InputLasraState extends State<InputLasra> {
                                       fontWeight: FontWeight.w400,
                                     ),
                                     decoration: InputDecoration(
-                                      
+                                      alignLabelWithHint: true,
                                       hintText: "Input here",
                                       hintStyle: TextStyle(
                                         color: Color(0xFFA2A2A2),
@@ -157,7 +158,12 @@ class _InputLasraState extends State<InputLasra> {
                           );
                         }).toList(),
                         value: localGovt,
-                        hint: Text("Select L.G.A", style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w500, color: Color(0xFFA2A2A2),),),
+                        hint: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left : 37.0),
+                            child: Text("Select L.G.A", style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w500, color: Color(0xFFA2A2A2),),),
+                          )),
                         onChanged: (value){
                           setState(() {
                             localGovt = value;
@@ -176,7 +182,12 @@ class _InputLasraState extends State<InputLasra> {
                       borderRadius: BorderRadius.all(Radius.circular(150.0),),
                       color: Color(0xFF009ED6),
                       child: Center(
-                        child: Text("Continue", style: TextStyle(color: Colors.white, fontSize: 22.0, fontWeight: FontWeight.bold,),)
+                        child: InkWell(
+                          onTap: (){
+                        Navigator.pushNamed(context, '/inputLasra/welcome');
+                      },
+                      splashColor: Color(0xFF00688C),
+                          child: Text("Continue", style: TextStyle(color: Colors.white, fontSize: 22.0, fontWeight: FontWeight.bold,),))
                       ),
                     )
                   ),
